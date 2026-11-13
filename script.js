@@ -230,6 +230,8 @@ function buildReasons() {
   document.querySelectorAll('.reason-card').forEach((card) => {
     const flipCard = () => card.classList.toggle('active');
     card.addEventListener('click', flipCard);
+    card.addEventListener('pointerdown', flipCard);
+    card.addEventListener('touchstart', flipCard, { passive: true });
     card.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
@@ -244,7 +246,7 @@ function buildSecrets() {
     .map(
       (message, index) => `
         <div class="secret-card" data-index="${index}">
-          <button type="button" aria-label="Открыть секрет ${index + 1}">Секрет ${index + 1}</button>
+          <button type="button" aria-label="Открыть секрет ${index + 1}" aria-expanded="false">Показать секрет ${index + 1}</button>
           <div class="secret-content">${message}</div>
         </div>
       `
@@ -254,9 +256,20 @@ function buildSecrets() {
   document.querySelectorAll('.secret-card button').forEach((button) => {
     button.addEventListener('click', () => {
       const card = button.closest('.secret-card');
-      card.classList.toggle('open');
+      const isOpen = card.classList.toggle('open');
+      const label = `${isOpen ? 'Скрыть' : 'Показать'} секрет ${Number(card.dataset.index) + 1}`;
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.setAttribute('aria-label', label);
+      button.textContent = label;
     });
   });
+}
+
+function toggleMemoryNote(forceVisible = false) {
+  const note = document.querySelector('.memory-note');
+  if (!note) return;
+  const shouldShow = forceVisible || quizFinished;
+  note.classList.toggle('hidden', !shouldShow);
 }
 
 function renderQuiz() {
@@ -264,6 +277,7 @@ function renderQuiz() {
     return;
   }
 
+  toggleMemoryNote(false);
   const question = quizData[currentQuestion];
   quizCount.textContent = `${currentQuestion + 1} / ${quizData.length}`;
   quizQuestion.textContent = question.question;
@@ -329,6 +343,7 @@ function handleAnswer(button, selectedIndex, question) {
     quizMessage.textContent = `Ты ответила правильно на ${score} из ${quizData.length} вопросов.`;
     nextQuestionBtn.textContent = 'Обнять Руслана ❤️';
     nextQuestionBtn.classList.remove('hidden');
+    toggleMemoryNote(true);
     nextQuestionBtn.onclick = () => {
       document.getElementById('final').scrollIntoView({ behavior: 'smooth', block: 'start' });
     };

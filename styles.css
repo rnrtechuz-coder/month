@@ -522,6 +522,8 @@ p {
 .reason-card {
   perspective: 1000px;
   min-height: 150px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .reason-inner {
@@ -554,6 +556,11 @@ p {
 .reason-face.back {
   transform: rotateY(180deg);
   background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(244, 204, 220, 0.85));
+}
+
+.reason-face.back p {
+  font-size: 0.78rem;
+  line-height: 1.6;
 }
 
 .reason-number {
@@ -655,6 +662,12 @@ p {
   margin: 2rem auto 0;
   padding: 1.5rem;
   border-radius: 26px;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.memory-note.hidden {
+  display: none;
 }
 
 .memory-note h3 {
@@ -686,44 +699,59 @@ p {
 
 .secret-card {
   min-height: 150px;
-  border-radius: 22px;
+  border-radius: 24px;
   padding: 1rem 0.8rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
-  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(247,214,227,0.7));
 }
 
 .secret-card::before {
   content: "❤";
-  font-size: 3rem;
-  color: rgba(233, 137, 177, 0.48);
+  font-size: 3.2rem;
+  color: rgba(233, 137, 177, 0.44);
   position: absolute;
-  inset: auto auto 0.5rem 50%;
+  inset: auto auto 0.7rem 50%;
   transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .secret-card button {
   width: 100%;
   min-height: 130px;
-  background: transparent;
-  border: none;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(233,137,177,0.16);
+  border-radius: 16px;
   padding: 0.5rem;
   color: var(--primary-strong);
   font-weight: 700;
   position: relative;
   z-index: 1;
+  transition: min-height 0.2s ease, background 0.2s ease;
+}
+
+.secret-card.open button {
+  min-height: 52px;
+  background: rgba(255,255,255,0.82);
 }
 
 .secret-content {
-  margin-top: 0.7rem;
-  padding: 0.8rem;
-  background: rgba(255,255,255,0.63);
-  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  margin-top: 0.65rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(233,137,177,0.15);
+  border-radius: 14px;
   color: var(--text);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  line-height: 1.65;
   display: none;
+  width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .secret-card.open .secret-content {
