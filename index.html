@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Наша история — романтический сайт-подарок для Самишки"
+    />
+    <title>Наша история</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="floating-hearts" aria-hidden="true"></div>
+    <div class="petals-layer" aria-hidden="true"></div>
+
+    <div class="intro-screen" id="introScreen" aria-live="polite">
+      <div class="intro-content">
+        <p>Для моей любимой Самишки ❤️</p>
+        <h1>Я подготовил для тебя кое-что особенное...</h1>
+        <button class="primary-btn" id="enterStoryBtn" type="button">
+          Открыть нашу историю
+        </button>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="nav-shell">
+        <div class="brand">Наша история</div>
+        <nav class="topnav" aria-label="Основная навигация">
+          <a href="#hero">Главная</a>
+          <a href="#timeline">История</a>
+          <a href="#gallery">Моменты</a>
+          <a href="#letter">Письмо</a>
+          <a href="#reasons">Причины</a>
+          <a href="#quiz">Викторина</a>
+          <a href="#secrets">Секреты</a>
+          <a href="#gift">Подарок</a>
+          <a href="#future">Будущее</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero section">
+        <div class="hero-content reveal">
+          <p class="eyebrow">С нашим первым месяцем, Самишка! ❤️</p>
+          <h1>Один месяц вместе, но впереди ещё столько прекрасных моментов.</h1>
+          <p class="subtitle">
+            Один месяц вместе, но впереди ещё столько прекрасных моментов.
+          </p>
+
+          <div class="date-grid">
+            <div class="date-card">
+              <span>8 октября 2026</span>
+              <small>наше знакомство</small>
+            </div>
+            <div class="date-card">
+              <span>14 октября 2026</span>
+              <small>начало отношений</small>
+            </div>
+            <div class="date-card highlight">
+              <span>14 ноября 2026</span>
+              <small>наш первый месяц</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section timeline-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Наша история</p>
+          <h2>С чего всё началось...</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card reveal">
+            <div class="timeline-date">8 октября 2026</div>
+            <div class="timeline-content">
+              <h3>День нашего знакомства</h3>
+              <p>
+                Кто бы мог подумать, что обычный день на флюорографии станет
+                началом такой особенной истории? Ты предложила мне подписать и
+                дала ручку. Казалось бы, совсем маленький момент, но именно он
+                стал началом нашей истории. Теперь этот день всегда будет для
+                меня особенным.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card reveal">
+            <div class="timeline-date">14 октября 2026</div>
+            <div class="timeline-content">
+              <h3>День, когда мы стали парой</h3>
+              <p>
+                В этот день мы начали встречаться. С этого момента у нашей
+                истории появилось особенное название — мы. И я очень рад, что всё
+                сложилось именно так.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card reveal">
+            <div class="timeline-date">14 ноября 2026</div>
+            <div class="timeline-content">
+              <h3>Наш первый месяц</h3>
+              <p>
+                Сегодня уже целый месяц, как мы вместе. Это только начало нашей
+                истории, и я хочу, чтобы впереди у нас было ещё очень много
+                счастливых дней, воспоминаний и прекрасных моментов.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Наши моменты</p>
+          <h2>Наши моменты ❤️</h2>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <figure class="photo-card tall">
+            <img src="media/1.jpg" alt="Наше фото 1" />
+            <figcaption>Первый смех.</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="media/2.jpg" alt="Наше фото 2" />
+            <figcaption>Маленькие радости.</figcaption>
+          </figure>
+          <figure class="photo-card wide">
+            <img src="media/3.jpg" alt="Наше фото 3" />
+            <figcaption>Вместе — всегда лучше.</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="media/4.jpg" alt="Наше фото 4" />
+            <figcaption>Тёплые воспоминания.</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="media/5.jpg" alt="Наше фото 5" />
+            <figcaption>Дни, которые хочется повторять.</figcaption>
+          </figure>
+          <figure class="photo-card tall">
+            <img src="media/6.jpg" alt="Наше фото 6" />
+            <figcaption>Наши моменты, которые останутся навсегда.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="letter" class="section letter-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Немного слов для тебя...</p>
+          <h2>Немного слов для тебя...</h2>
+        </div>
+
+        <div class="envelope-wrap reveal">
+          <button class="envelope" id="openEnvelopeBtn" type="button" aria-label="Открыть письмо">
+            <div class="envelope-flap"></div>
+            <div class="envelope-front"></div>
+            <div class="envelope-label">Для моей Самишки</div>
+          </button>
+
+          <article class="letter" id="letterCard">
+            <p>
+              Моя любимая Самишка!<br /><br />
+              Я просто хочу сказать тебе спасибо за этот месяц.<br /><br />
+              Спасибо за улыбки, за наши разговоры, за моменты, которые мы уже
+              успели провести вместе.<br /><br />
+              Иногда самые красивые истории начинаются совершенно неожиданно. Наша
+              началась 8 октября на флюорографии, с твоего предложения подписать и
+              той самой ручки.<br /><br />
+              Я рад, что 14 октября мы начали встречаться.<br /><br />
+              Пусть это будет только первая глава нашей большой истории.<br /><br />
+              С любовью, твой Руслан ❤️
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="reasons" class="section reasons-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">30 причин</p>
+          <h2>30 причин, почему ты особенная для меня</h2>
+        </div>
+
+        <div class="reasons-grid" id="reasonsGrid"></div>
+      </section>
+
+      <section id="quiz" class="section quiz-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Проверим память</p>
+          <h2>Давай проверим, как хорошо ты помнишь нашу историю? ❤️</h2>
+        </div>
+
+        <div class="quiz-card reveal">
+          <div class="quiz-progress" aria-live="polite">
+            <span id="quizCount">1 / 12</span>
+          </div>
+          <div class="quiz-question" id="quizQuestion"></div>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-message" id="quizMessage"></div>
+          <button class="primary-btn hidden" id="nextQuestionBtn" type="button">
+            Следующий вопрос
+          </button>
+        </div>
+
+        <div class="memory-note reveal">
+          <h3>Самишка, а что ты почувствовала, когда впервые увидела Руслана?</h3>
+          <textarea id="memoryInput" rows="4" placeholder="Напиши пару строк..."></textarea>
+          <p class="memory-status" id="memoryStatus">Ответ сохраняется на этом устройстве, чтобы ты могла вернуться и посмотреть его позже.</p>
+        </div>
+      </section>
+
+      <section id="secrets" class="section secrets-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Маленькие секреты для тебя</p>
+          <h2>Маленькие секреты для тебя</h2>
+        </div>
+
+        <div class="secret-grid" id="secretGrid"></div>
+      </section>
+
+      <section id="counter" class="section counter-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Сколько мы уже вместе?</p>
+          <h2>Сколько мы уже вместе? ❤️</h2>
+        </div>
+
+        <div class="counter-card reveal">
+          <div class="countdown" id="countdown">
+            <div class="time-box">
+              <span id="days">00</span>
+              <small>дни</small>
+            </div>
+            <div class="time-box">
+              <span id="hours">00</span>
+              <small>часы</small>
+            </div>
+            <div class="time-box">
+              <span id="minutes">00</span>
+              <small>минуты</small>
+            </div>
+            <div class="time-box">
+              <span id="seconds">00</span>
+              <small>секунды</small>
+            </div>
+          </div>
+          <p class="counter-caption">И это только начало нашей истории...</p>
+        </div>
+      </section>
+
+      <section id="gift" class="section gift-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">У меня есть для тебя сюрприз</p>
+          <h2>У меня есть для тебя сюрприз</h2>
+        </div>
+
+        <div class="gift-box-wrap reveal">
+          <button class="gift-box" id="giftBoxBtn" type="button" aria-label="Открыть подарок">
+            <div class="gift-lid"></div>
+            <div class="gift-base"></div>
+            <div class="gift-bow" aria-hidden="true"></div>
+          </button>
+
+          <div class="gift-message" id="giftMessage">
+            <p>
+              Самишка, ты заслуживаешь самого прекрасного.<br /><br />
+              И пусть этот маленький сайт станет ещё одним нашим воспоминанием.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="future" class="section future-section">
+        <div class="section-header reveal">
+          <p class="eyebrow">Это только начало...</p>
+          <h2>Это только начало...</h2>
+        </div>
+
+        <div class="future-grid reveal">
+          <article class="future-card">Ещё больше совместных воспоминаний</article>
+          <article class="future-card">Новые счастливые моменты</article>
+          <article class="future-card">Маленькие путешествия</article>
+          <article class="future-card">Много поводов улыбаться</article>
+          <article class="future-card">Новые фотографии</article>
+          <article class="future-card">Ещё много наших месяцев вместе</article>
+        </div>
+        <p class="future-text reveal">
+          Впереди у нас ещё столько всего прекрасного. Я хочу, чтобы наша история
+          продолжалась и становилась только красивее.
+        </p>
+      </section>
+    </main>
+
+    <footer class="final-screen" id="final">
+      <div class="final-heart" aria-hidden="true">❤</div>
+      <p>
+        Самишка, спасибо тебе за этот месяц.<br /><br />
+        Я очень рад, что однажды на флюорографии ты предложила мне подписать и
+        дала ту самую ручку.<br /><br />
+        Казалось бы, маленький момент, а стал началом чего-то очень дорогого для
+        меня.<br /><br />
+        Я хочу, чтобы наша история продолжалась ещё очень долго.<br /><br />
+        С нашим первым месяцем, любимая!<br /><br />
+        С любовью, твой Руслан ❤️
+      </p>
+      <div class="final-date">14.10.2026 — ∞</div>
+    </footer>
+
+    <div class="floating-controls">
+      <button class="music-toggle" id="musicToggle" type="button" aria-label="Пауза/воспроизведение музыки">
+        ▶ Музыка
+      </button>
+
+      <div class="volume-wrap">
+        <label for="volumeControl">Громкость</label>
+        <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.6" />
+      </div>
+
+      <button class="scroll-top" id="scrollTopBtn" type="button" aria-label="Наверх">↑ Наверх</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
