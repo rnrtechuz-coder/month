@@ -706,15 +706,23 @@ p {
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  isolation: isolate;
   background: linear-gradient(145deg, #fff 0%, #ffe1ec 100%);
   border: 1px solid rgba(215, 95, 147, 0.32);
   box-shadow: 0 12px 28px rgba(152, 78, 112, 0.12);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+.secret-card::before {
+  content: none;
+}
+
 .secret-card button {
   width: 100%;
   min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255,255,255,0.72);
   border: 1px solid rgba(215,95,147,0.24);
   border-radius: 16px;
@@ -722,6 +730,8 @@ p {
   color: #a63d6a;
   font-size: 1rem;
   font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
   position: relative;
   z-index: 1;
   transition: min-height 0.2s ease, background 0.2s ease, border-color 0.2s ease;
@@ -744,6 +754,8 @@ p {
   min-height: 48px;
   background: #fff;
   border-color: rgba(215,95,147,0.32);
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .secret-content {
@@ -758,6 +770,7 @@ p {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.7;
+  text-align: center;
   display: none;
   width: 100%;
   overflow-wrap: anywhere;
