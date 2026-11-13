@@ -246,8 +246,8 @@ function buildSecrets() {
     .map(
       (message, index) => `
         <div class="secret-card" data-index="${index}">
-          <button type="button" aria-label="Открыть секрет ${index + 1}" aria-expanded="false">Показать секрет ${index + 1}</button>
-          <div class="secret-content">${message}</div>
+          <button type="button" aria-label="Открыть секрет ${index + 1}" aria-expanded="false">💌 Открыть секрет ${index + 1}</button>
+          <div class="secret-content" aria-live="polite">${message}</div>
         </div>
       `
     )
@@ -257,7 +257,9 @@ function buildSecrets() {
     button.addEventListener('click', () => {
       const card = button.closest('.secret-card');
       const isOpen = card.classList.toggle('open');
-      const label = `${isOpen ? 'Скрыть' : 'Показать'} секрет ${Number(card.dataset.index) + 1}`;
+      const label = isOpen
+        ? `Скрыть секрет ${Number(card.dataset.index) + 1}`
+        : `💌 Открыть секрет ${Number(card.dataset.index) + 1}`;
       button.setAttribute('aria-expanded', String(isOpen));
       button.setAttribute('aria-label', label);
       button.textContent = label;
